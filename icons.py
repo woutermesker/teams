@@ -3,8 +3,8 @@ import requests
 from openai import OpenAI
 import pandas as pd
 import json
-
 import warnings
+import datetime
 
 warnings.warn("This function is deprecated and will be removed in the future.")
 
@@ -15,12 +15,9 @@ with open('pods.json', 'r') as file:
 # Convert the JSON data to a pandas DataFrame
 df = pd.DataFrame(json_data)
 
-import datetime
-
+# Get Current time in format %Y-%m-%d %H:%M
 current_time = datetime.datetime.now().time()
-
 formatted_time = current_time.strftime("%Y-%m-%d %H:%M")
-
 
 client = OpenAI()
 
